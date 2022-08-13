@@ -1,24 +1,198 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Biom" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BIOMlaunch.png" translatesAutoresizingMaskIntoConstraints="NO" id="5mp-db-wPl">
+                                <rect key="frame" x="145" y="74" width="124" height="89.5"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VC-H1-g9r">
+                                <rect key="frame" x="36" y="636" width="342" height="62"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="googlelogin.png"/>
+                                <connections>
+                                    <action selector="google:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bly-bQ-wWA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGe-Xk-Ndk">
+                                <rect key="frame" x="35" y="708" width="344" height="62"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="naverlogin.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f64-WW-4R9">
+                                <rect key="frame" x="35" y="780" width="344" height="62"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="kakaologin.png"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.14509803921568626" green="0.24705882352941178" blue="0.52549019607843139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5mp-db-wPl" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="5Gt-0M-mQL"/>
+                            <constraint firstItem="5mp-db-wPl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" id="CcH-Tx-O6J"/>
+                            <constraint firstItem="qGe-Xk-Ndk" firstAttribute="top" secondItem="5VC-H1-g9r" secondAttribute="bottom" constant="10" id="P3H-yh-KPx"/>
+                            <constraint firstItem="5mp-db-wPl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="R33-YO-6Er"/>
+                            <constraint firstItem="f64-WW-4R9" firstAttribute="top" secondItem="qGe-Xk-Ndk" secondAttribute="bottom" constant="10" id="Uk5-V3-BMw"/>
+                            <constraint firstItem="5VC-H1-g9r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vmu-OE-AGc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="f64-WW-4R9" secondAttribute="bottom" constant="20" id="XLf-b1-UXf"/>
+                            <constraint firstItem="f64-WW-4R9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ghN-ev-rhs"/>
+                            <constraint firstItem="qGe-Xk-Ndk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hDa-LX-3LS"/>
+                            <constraint firstItem="5mp-db-wPl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uB6-Nn-ra7"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-100" y="-210"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bqo-wu-W3w">
+            <objects>
+                <viewController id="L4b-CI-18T" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="spr-zG-5Nk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="BgS-pd-aWT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="map.png" id="n08-7T-gPD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n2w-Wg-4dJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1819" y="496"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Rcg-0U-NzX">
+            <objects>
+                <viewController id="nl9-3T-O1I" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AdK-KX-vo4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="eeg-5k-8Fs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="search.png" id="Vau-T1-Lbc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nsl-hJ-LgO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1819" y="1175"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="CQw-To-qrm">
+            <objects>
+                <viewController id="jKw-d1-ejZ" customClass="SettingViewController" customModule="Biom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="91d-lO-1pq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kya-A6-nFj">
+                                <rect key="frame" x="0.0" y="244" width="414" height="618"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SettingCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingCell" id="RxP-2D-vp6" customClass="SettingCell" customModule="Biom" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RxP-2D-vp6" id="VW9-dc-1ff">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgX-ot-Zqc">
+                                                    <rect key="frame" x="30" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="DgX-ot-Zqc" firstAttribute="leading" secondItem="VW9-dc-1ff" secondAttribute="leadingMargin" constant="10" id="3kR-Ic-acs"/>
+                                                <constraint firstItem="DgX-ot-Zqc" firstAttribute="centerY" secondItem="VW9-dc-1ff" secondAttribute="centerY" id="kLS-L7-8By"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="DgX-ot-Zqc" id="Ms4-fq-e4k"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Wr0-gC-2M2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Wr0-gC-2M2" firstAttribute="trailing" secondItem="kya-A6-nFj" secondAttribute="trailing" id="2cc-hh-Muw"/>
+                            <constraint firstItem="Wr0-gC-2M2" firstAttribute="bottom" secondItem="kya-A6-nFj" secondAttribute="bottom" id="FcC-Cy-i2Z"/>
+                            <constraint firstItem="kya-A6-nFj" firstAttribute="top" secondItem="Wr0-gC-2M2" secondAttribute="top" constant="200" id="Rcu-8r-HRi"/>
+                            <constraint firstItem="kya-A6-nFj" firstAttribute="leading" secondItem="Wr0-gC-2M2" secondAttribute="leading" id="h2s-y9-AlD"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="1LM-yA-ETB"/>
+                    <connections>
+                        <outlet property="SettingTable" destination="kya-A6-nFj" id="Ufj-Vf-tt8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VbM-Te-bLX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1902.8985507246377" y="-1013.1696428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="c4V-Oc-SJP">
+            <objects>
+                <viewController id="yST-Vc-27s" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RdL-Ik-STd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ibe-Jj-gpw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="main.png" id="Dnj-XK-Kti"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vym-1D-ZsK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1819" y="-210"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="4F8-LG-CKP">
+            <objects>
+                <tabBarController storyboardIdentifier="Tabbar" id="Fnx-gE-pWZ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oVa-Xa-Nxs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="yST-Vc-27s" kind="relationship" relationship="viewControllers" id="d4e-60-ETu"/>
+                        <segue destination="L4b-CI-18T" kind="relationship" relationship="viewControllers" id="QGM-1n-kVY"/>
+                        <segue destination="nl9-3T-O1I" kind="relationship" relationship="viewControllers" id="YcF-lm-oVa"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQK-EO-TCY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939" y="-210"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BIOMlaunch.png" width="103" height="31"/>
+        <image name="googlelogin.png" width="318" height="48"/>
+        <image name="kakaologin.png" width="320" height="48"/>
+        <image name="main.png" width="27" height="35"/>
+        <image name="map.png" width="40" height="35"/>
+        <image name="naverlogin.png" width="320" height="48"/>
+        <image name="search.png" width="35" height="35"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

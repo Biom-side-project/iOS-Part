@@ -9,23 +9,41 @@
 /* Begin PBXBuildFile section */
 		03A5354228A7795B0007BCCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A5354128A7795B0007BCCF /* AppDelegate.swift */; };
 		03A5354428A7795B0007BCCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A5354328A7795B0007BCCF /* SceneDelegate.swift */; };
+		03A5354628A7795B0007BCCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A5354528A7795B0007BCCF /* ViewController.swift */; };
 		03A5354928A7795B0007BCCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A5354728A7795B0007BCCF /* Main.storyboard */; };
 		03A5354B28A7795C0007BCCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03A5354A28A7795C0007BCCF /* Assets.xcassets */; };
 		03A5354E28A7795C0007BCCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A5354C28A7795C0007BCCF /* LaunchScreen.storyboard */; };
-		03A5355628A780170007BCCF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A5355528A780170007BCCF /* MainViewController.swift */; };
-		03A5355828A782370007BCCF /* TopLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A5355728A782370007BCCF /* TopLogo.png */; };
+		4919A8C228A7821900B531C2 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 4919A8C128A7821900B531C2 /* search.png */; };
+		4919A8C528A7825800B531C2 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 4919A8C328A7825700B531C2 /* map.png */; };
+		4919A8C628A7825800B531C2 /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = 4919A8C428A7825800B531C2 /* main.png */; };
+		4919A8CA28A783E200B531C2 /* naverlogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 4919A8C728A783E200B531C2 /* naverlogin.png */; };
+		4919A8CB28A783E200B531C2 /* kakaologin.png in Resources */ = {isa = PBXBuildFile; fileRef = 4919A8C828A783E200B531C2 /* kakaologin.png */; };
+		4919A8CC28A783E200B531C2 /* googlelogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 4919A8C928A783E200B531C2 /* googlelogin.png */; };
+		4919A8CE28A7844500B531C2 /* BIOMlaunch.png in Resources */ = {isa = PBXBuildFile; fileRef = 4919A8CD28A7844500B531C2 /* BIOMlaunch.png */; };
+		4919A8D028A7891800B531C2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919A8CF28A7891800B531C2 /* SettingViewController.swift */; };
+		49E3700028A78D1700E7EF07 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E36FFF28A78D1700E7EF07 /* SettingCell.swift */; };
+		49E3700428A7B32500E7EF07 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3700328A7B32500E7EF07 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		03A5353E28A7795B0007BCCF /* Biom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03A5354128A7795B0007BCCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03A5354328A7795B0007BCCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		03A5354528A7795B0007BCCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		03A5354828A7795B0007BCCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03A5354A28A7795C0007BCCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03A5354D28A7795C0007BCCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03A5354F28A7795C0007BCCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03A5355528A780170007BCCF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		03A5355728A782370007BCCF /* TopLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TopLogo.png; path = Assets.xcassets/TopLogo.png; sourceTree = "<group>"; };
+		4919A8C128A7821900B531C2 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		4919A8C328A7825700B531C2 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		4919A8C428A7825800B531C2 /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
+		4919A8C728A783E200B531C2 /* naverlogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = naverlogin.png; sourceTree = "<group>"; };
+		4919A8C828A783E200B531C2 /* kakaologin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kakaologin.png; sourceTree = "<group>"; };
+		4919A8C928A783E200B531C2 /* googlelogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = googlelogin.png; sourceTree = "<group>"; };
+		4919A8CD28A7844500B531C2 /* BIOMlaunch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BIOMlaunch.png; sourceTree = "<group>"; };
+		4919A8CF28A7891800B531C2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		49E36FFF28A78D1700E7EF07 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		49E3700328A7B32500E7EF07 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +76,23 @@
 		03A5354028A7795B0007BCCF /* Biom */ = {
 			isa = PBXGroup;
 			children = (
-				03A5355728A782370007BCCF /* TopLogo.png */,
+				4919A8CD28A7844500B531C2 /* BIOMlaunch.png */,
+				4919A8C928A783E200B531C2 /* googlelogin.png */,
+				4919A8C828A783E200B531C2 /* kakaologin.png */,
+				4919A8C728A783E200B531C2 /* naverlogin.png */,
+				4919A8C428A7825800B531C2 /* main.png */,
+				4919A8C328A7825700B531C2 /* map.png */,
+				4919A8C128A7821900B531C2 /* search.png */,
 				03A5354128A7795B0007BCCF /* AppDelegate.swift */,
 				03A5354328A7795B0007BCCF /* SceneDelegate.swift */,
+				03A5354528A7795B0007BCCF /* ViewController.swift */,
 				03A5354728A7795B0007BCCF /* Main.storyboard */,
-				03A5355528A780170007BCCF /* MainViewController.swift */,
 				03A5354A28A7795C0007BCCF /* Assets.xcassets */,
 				03A5354C28A7795C0007BCCF /* LaunchScreen.storyboard */,
 				03A5354F28A7795C0007BCCF /* Info.plist */,
+				4919A8CF28A7891800B531C2 /* SettingViewController.swift */,
+				49E36FFF28A78D1700E7EF07 /* SettingCell.swift */,
+				49E3700328A7B32500E7EF07 /* MainViewController.swift */,
 			);
 			path = Biom;
 			sourceTree = "<group>";
@@ -129,9 +156,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				03A5354E28A7795C0007BCCF /* LaunchScreen.storyboard in Resources */,
+				4919A8CB28A783E200B531C2 /* kakaologin.png in Resources */,
 				03A5354B28A7795C0007BCCF /* Assets.xcassets in Resources */,
-				03A5355828A782370007BCCF /* TopLogo.png in Resources */,
+				4919A8CA28A783E200B531C2 /* naverlogin.png in Resources */,
+				4919A8C628A7825800B531C2 /* main.png in Resources */,
+				4919A8CE28A7844500B531C2 /* BIOMlaunch.png in Resources */,
 				03A5354928A7795B0007BCCF /* Main.storyboard in Resources */,
+				4919A8C228A7821900B531C2 /* search.png in Resources */,
+				4919A8C528A7825800B531C2 /* map.png in Resources */,
+				4919A8CC28A783E200B531C2 /* googlelogin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,9 +175,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03A5355628A780170007BCCF /* MainViewController.swift in Sources */,
+				03A5354628A7795B0007BCCF /* ViewController.swift in Sources */,
 				03A5354228A7795B0007BCCF /* AppDelegate.swift in Sources */,
 				03A5354428A7795B0007BCCF /* SceneDelegate.swift in Sources */,
+				49E3700428A7B32500E7EF07 /* MainViewController.swift in Sources */,
+				49E3700028A78D1700E7EF07 /* SettingCell.swift in Sources */,
+				4919A8D028A7891800B531C2 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,15 +1,7 @@
-//
-//  MainViewController.swift
-//  Biom
-//
-//  Created by 오예진 on 2022/08/13.
-//
 
 import UIKit
 
 class MainViewController: UIViewController {
-
-
 
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var topLogo: UILabel!
@@ -19,6 +11,7 @@ class MainViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+
     
 
     /*

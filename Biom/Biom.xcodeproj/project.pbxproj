@@ -13,6 +13,7 @@
 		03A5354928A7795B0007BCCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A5354728A7795B0007BCCF /* Main.storyboard */; };
 		03A5354B28A7795C0007BCCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03A5354A28A7795C0007BCCF /* Assets.xcassets */; };
 		03A5354E28A7795C0007BCCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A5354C28A7795C0007BCCF /* LaunchScreen.storyboard */; };
+		03CD6A3D28A91D2600C22836 /* refrash.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CD6A3C28A91D2600C22836 /* refrash.png */; };
 		4919A8C228A7821900B531C2 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 4919A8C128A7821900B531C2 /* search.png */; };
 		4919A8C528A7825800B531C2 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 4919A8C328A7825700B531C2 /* map.png */; };
 		4919A8C628A7825800B531C2 /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = 4919A8C428A7825800B531C2 /* main.png */; };
@@ -34,6 +35,7 @@
 		03A5354A28A7795C0007BCCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03A5354D28A7795C0007BCCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03A5354F28A7795C0007BCCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03CD6A3C28A91D2600C22836 /* refrash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refrash.png; sourceTree = "<group>"; };
 		4919A8C128A7821900B531C2 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		4919A8C328A7825700B531C2 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		4919A8C428A7825800B531C2 /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		03A5354028A7795B0007BCCF /* Biom */ = {
 			isa = PBXGroup;
 			children = (
+				03CD6A3C28A91D2600C22836 /* refrash.png */,
 				4919A8CD28A7844500B531C2 /* BIOMlaunch.png */,
 				4919A8C928A783E200B531C2 /* googlelogin.png */,
 				4919A8C828A783E200B531C2 /* kakaologin.png */,
@@ -162,6 +165,7 @@
 				4919A8C628A7825800B531C2 /* main.png in Resources */,
 				4919A8CE28A7844500B531C2 /* BIOMlaunch.png in Resources */,
 				03A5354928A7795B0007BCCF /* Main.storyboard in Resources */,
+				03CD6A3D28A91D2600C22836 /* refrash.png in Resources */,
 				4919A8C228A7821900B531C2 /* search.png in Resources */,
 				4919A8C528A7825800B531C2 /* map.png in Resources */,
 				4919A8CC28A783E200B531C2 /* googlelogin.png in Resources */,

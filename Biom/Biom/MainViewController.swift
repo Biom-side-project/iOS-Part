@@ -6,22 +6,44 @@ class MainViewController: UIViewController {
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var topLogo: UILabel!
     @IBOutlet weak var userLogo: UIImageView!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    let commentList: [MainComments] = MainComments.list
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+        collectionView.dataSource = self
+        collectionView.delegate = self
 
+    }
+}
+
+extension MainViewController: UICollectionViewDataSource {
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            return commentList.count
+        }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+           
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCommentCell", for: indexPath) as? MainCommentCell else {
+            return UICollectionViewCell()
+        }
+        
+        let comment = commentList[indexPath.item]
+        
+        cell.configure(comment)
+        return cell
+       }
+}
 
-    /*
-    // MARK: - Navigation
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        return CGSize(width: collectionView.bounds.width, height: 80)
     }
-    */
-
+    
 }

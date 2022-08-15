@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fnx-gE-pWZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -7,6 +7,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -209,7 +210,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="y7c-rv-CQ8">
-                                <rect key="frame" x="33" y="133" width="348" height="389"/>
+                                <rect key="frame" x="33" y="133" width="348" height="680"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광진구의 비소식은 어떤가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYr-bu-nir">
                                         <rect key="frame" x="0.0" y="0.0" width="348" height="30"/>
@@ -305,14 +306,13 @@
                                             <constraint firstItem="qiF-bW-DYo" firstAttribute="top" secondItem="Awk-Nr-jyx" secondAttribute="bottom" constant="6" id="EpT-cB-wR4"/>
                                             <constraint firstItem="qiF-bW-DYo" firstAttribute="centerX" secondItem="Awk-Nr-jyx" secondAttribute="centerX" id="QGr-hc-DbB"/>
                                             <constraint firstItem="qiF-bW-DYo" firstAttribute="leading" secondItem="oez-fI-5fo" secondAttribute="leading" constant="32.5" id="RNy-av-aim"/>
-                                            <constraint firstAttribute="width" constant="348" id="pkD-Ef-W4g"/>
                                             <constraint firstItem="Awk-Nr-jyx" firstAttribute="leading" secondItem="oez-fI-5fo" secondAttribute="leading" id="vYt-IZ-fxO"/>
                                             <constraint firstAttribute="bottom" secondItem="qiF-bW-DYo" secondAttribute="bottom" constant="7" id="xA6-cP-1DS"/>
                                             <constraint firstItem="Awk-Nr-jyx" firstAttribute="top" secondItem="oez-fI-5fo" secondAttribute="top" constant="30" id="z4B-Yr-xWn"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="keA-3H-IMI">
-                                        <rect key="frame" x="0.0" y="110" width="348" height="279"/>
+                                        <rect key="frame" x="0.0" y="110" width="348" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예진님도 직접 광진구의 비소식을 남겨주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEM-HK-BDi">
                                                 <rect key="frame" x="21.5" y="20" width="144" height="10"/>
@@ -396,15 +396,123 @@
                                         <constraints>
                                             <constraint firstItem="Zgv-Uh-Rc8" firstAttribute="leading" secondItem="keA-3H-IMI" secondAttribute="leading" id="LiV-CP-Y6K"/>
                                             <constraint firstItem="oEM-HK-BDi" firstAttribute="top" secondItem="keA-3H-IMI" secondAttribute="top" constant="20" id="W9Q-cY-Sbo"/>
+                                            <constraint firstAttribute="height" constant="100" id="baP-zS-2WG"/>
                                             <constraint firstItem="oEM-HK-BDi" firstAttribute="centerX" secondItem="Zgv-Uh-Rc8" secondAttribute="centerX" id="fxo-AK-9SP"/>
                                             <constraint firstItem="Zgv-Uh-Rc8" firstAttribute="top" secondItem="oEM-HK-BDi" secondAttribute="bottom" constant="6" id="mfw-nO-v9z"/>
                                         </constraints>
                                     </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BCt-hh-bzc">
+                                        <rect key="frame" x="0.0" y="210" width="348" height="470"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="470" id="ako-qV-lsX"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O2t-yT-d9S">
+                                            <size key="itemSize" width="284" height="89"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainCommentCell" reuseIdentifier="MainCommentCell" id="dHh-nu-myV" customClass="MainCommentCell" customModule="Biom" customModuleProvider="target">
+                                                <rect key="frame" x="32" y="0.0" width="284" height="89"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xmr-7I-1X7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="284" height="89"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이것은 닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Za6-4l-Gjt">
+                                                            <rect key="frame" x="18" y="13" width="38.5" height="8.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="7"/>
+                                                            <color key="textColor" red="0.14509803921568626" green="0.24705882352941178" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="갑자기 소나기가 내려서 너무 놀랐어요 ㅠㅠ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DB-2Y-yMV">
+                                                            <rect key="frame" x="18" y="29.5" width="170" height="12"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdn-Wc-6DR">
+                                                            <rect key="frame" x="18" y="49.5" width="30" height="11"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="6"/>
+                                                            <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" title=" 좋아요" image="heart.fill" catalog="system">
+                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="10"/>
+                                                            </state>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZa-bF-FVU">
+                                                            <rect key="frame" x="50" y="51.5" width="4.5" height="7.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="6"/>
+                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6분 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYm-Bp-YKn">
+                                                            <rect key="frame" x="246.5" y="13" width="19.5" height="8.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="7"/>
+                                                            <color key="textColor" red="0.1450980392" green="0.2470588235" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="0DB-2Y-yMV" firstAttribute="leading" secondItem="xmr-7I-1X7" secondAttribute="leading" constant="18" id="D6v-vp-FBM"/>
+                                                        <constraint firstItem="0DB-2Y-yMV" firstAttribute="top" secondItem="Za6-4l-Gjt" secondAttribute="bottom" constant="8" id="OjJ-FR-3w6"/>
+                                                        <constraint firstItem="Xdn-Wc-6DR" firstAttribute="top" secondItem="0DB-2Y-yMV" secondAttribute="bottom" constant="8" id="S6q-pX-Bgn"/>
+                                                        <constraint firstItem="UZa-bF-FVU" firstAttribute="centerY" secondItem="Xdn-Wc-6DR" secondAttribute="centerY" id="h7b-x3-aVq"/>
+                                                        <constraint firstItem="kYm-Bp-YKn" firstAttribute="top" secondItem="xmr-7I-1X7" secondAttribute="top" constant="13" id="i5c-ux-oVg"/>
+                                                        <constraint firstItem="Xdn-Wc-6DR" firstAttribute="leading" secondItem="xmr-7I-1X7" secondAttribute="leading" constant="18" id="mG6-wC-rIW"/>
+                                                        <constraint firstItem="Za6-4l-Gjt" firstAttribute="leading" secondItem="xmr-7I-1X7" secondAttribute="leading" constant="18" id="mP5-EO-jLu"/>
+                                                        <constraint firstItem="UZa-bF-FVU" firstAttribute="leading" secondItem="Xdn-Wc-6DR" secondAttribute="trailing" constant="2" id="naY-eY-bj0"/>
+                                                        <constraint firstItem="Za6-4l-Gjt" firstAttribute="top" secondItem="xmr-7I-1X7" secondAttribute="top" constant="13" id="pS5-BR-KaL"/>
+                                                        <constraint firstAttribute="trailing" secondItem="kYm-Bp-YKn" secondAttribute="trailing" constant="18" id="uEL-4a-Neg"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </collectionViewCellContentView>
+                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="8"/>
+                                                <size key="customSize" width="284" height="89"/>
+                                                <connections>
+                                                    <outlet property="contentsLabel" destination="0DB-2Y-yMV" id="rZV-jO-ats"/>
+                                                    <outlet property="heartButton" destination="Xdn-Wc-6DR" id="H2E-Rn-Mpc"/>
+                                                    <outlet property="heartNumber" destination="UZa-bF-FVU" id="cNA-bA-ULd"/>
+                                                    <outlet property="nickNameLabel" destination="Za6-4l-Gjt" id="ugY-Nl-0GO"/>
+                                                    <outlet property="timeLabel" destination="kYm-Bp-YKn" id="X8J-3s-MFe"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3k4-95-gUg">
+                                        <rect key="frame" x="0.0" y="680" width="348" height="0.0"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MlB-h4-kdb">
+                                                <rect key="frame" x="0.0" y="0.0" width="348" height="0.0"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIm-32-hVO">
+                                                <rect key="frame" x="140" y="-16" width="67" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="389" id="IJn-Sl-sqg"/>
+                                    <constraint firstItem="BCt-hh-bzc" firstAttribute="trailing" secondItem="keA-3H-IMI" secondAttribute="trailing" id="BWx-n4-JWA"/>
+                                    <constraint firstItem="BCt-hh-bzc" firstAttribute="leading" secondItem="y7c-rv-CQ8" secondAttribute="leading" id="Ht6-x6-zDD"/>
                                     <constraint firstItem="QYr-bu-nir" firstAttribute="leading" secondItem="y7c-rv-CQ8" secondAttribute="leading" id="OoI-U9-fAX"/>
                                     <constraint firstItem="QYr-bu-nir" firstAttribute="top" secondItem="y7c-rv-CQ8" secondAttribute="top" id="XoL-YJ-QoC"/>
+                                    <constraint firstItem="BCt-hh-bzc" firstAttribute="top" secondItem="keA-3H-IMI" secondAttribute="bottom" id="pqp-yH-Fas"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -415,12 +523,14 @@
                             <constraint firstItem="E8U-ec-xYN" firstAttribute="top" secondItem="ro7-Sc-0fe" secondAttribute="top" constant="20" id="FiH-Dt-JSr"/>
                             <constraint firstItem="E8U-ec-xYN" firstAttribute="centerX" secondItem="ULZ-mb-yhz" secondAttribute="centerX" id="bPk-9r-pWM"/>
                             <constraint firstItem="y7c-rv-CQ8" firstAttribute="leading" secondItem="E8U-ec-xYN" secondAttribute="leading" id="bYz-jZ-dM9"/>
+                            <constraint firstItem="ro7-Sc-0fe" firstAttribute="bottom" secondItem="y7c-rv-CQ8" secondAttribute="bottom" id="duS-Kz-Suc"/>
                             <constraint firstItem="ro7-Sc-0fe" firstAttribute="trailing" secondItem="E8U-ec-xYN" secondAttribute="trailing" constant="33" id="ftp-5g-qii"/>
                             <constraint firstItem="E8U-ec-xYN" firstAttribute="leading" secondItem="ro7-Sc-0fe" secondAttribute="leading" constant="33" id="nwg-1k-kNS"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="main.png" id="Dnj-XK-Kti"/>
                     <connections>
+                        <outlet property="collectionView" destination="BCt-hh-bzc" id="NcI-h0-pd9"/>
                         <outlet property="topBar" destination="E8U-ec-xYN" id="m3G-wg-IIk"/>
                         <outlet property="topLogo" destination="lLa-oR-NxA" id="rgZ-7a-dVd"/>
                         <outlet property="userLogo" destination="Zdh-sH-blJ" id="6LC-pX-LgW"/>
@@ -455,6 +565,7 @@
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="googlelogin.png" width="318" height="48"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="kakaologin.png" width="320" height="48"/>
         <image name="main.png" width="27" height="35"/>
         <image name="map.png" width="40" height="35"/>
@@ -467,6 +578,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -21,4 +21,11 @@ class MainCommentCell: UICollectionViewCell {
         heartNumber.text = "\(comment.heart)"
         timeLabel.text = "\(comment.time)"
         }
+    
+    override func awakeFromNib() {
+            super.awakeFromNib()
+        contentView.layer.borderColor = UIColor(named: "grayBorderColor")?.cgColor
+        contentView.layer.borderWidth = 1.0
+        contentView.layer.cornerRadius = 20
+        }
 }

@@ -43,7 +43,9 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return CGSize(width: collectionView.bounds.width, height: 80)
+        return CGSize(width: 321, height: 69)
     }
+    
+    
     
 }

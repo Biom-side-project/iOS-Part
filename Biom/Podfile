@@ -7,4 +7,6 @@ target 'Biom' do
 
   # Pods for Biom
 pod 'GoogleSignIn'
+pod 'Alamofire'
+pod 'SwiftJWT'
 end

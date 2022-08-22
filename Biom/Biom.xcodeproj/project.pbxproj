@@ -23,6 +23,8 @@
 		4919A8D028A7891800B531C2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919A8CF28A7891800B531C2 /* SettingViewController.swift */; };
 		49E3700028A78D1700E7EF07 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E36FFF28A78D1700E7EF07 /* SettingCell.swift */; };
 		49E3700428A7B32500E7EF07 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3700328A7B32500E7EF07 /* MainViewController.swift */; };
+		49E3700628A8077200E7EF07 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3700528A8077200E7EF07 /* MapViewController.swift */; };
+		E59BADAC2A8DD8E3B97D3EE8 /* Pods_Biom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B76E06B49B76B4F2599EB9D /* Pods_Biom.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,10 @@
 		4919A8CF28A7891800B531C2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		49E36FFF28A78D1700E7EF07 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		49E3700328A7B32500E7EF07 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		49E3700528A8077200E7EF07 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		592ABB5328143F73D9A066AB /* Pods-Biom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Biom.release.xcconfig"; path = "Target Support Files/Pods-Biom/Pods-Biom.release.xcconfig"; sourceTree = "<group>"; };
+		72029358D5E50FE134A0816B /* Pods-Biom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Biom.debug.xcconfig"; path = "Target Support Files/Pods-Biom/Pods-Biom.debug.xcconfig"; sourceTree = "<group>"; };
+		8B76E06B49B76B4F2599EB9D /* Pods_Biom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Biom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E59BADAC2A8DD8E3B97D3EE8 /* Pods_Biom.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +69,8 @@
 			children = (
 				03A5354028A7795B0007BCCF /* Biom */,
 				03A5353F28A7795B0007BCCF /* Products */,
+				79E9AC4971EFC382DD754EC1 /* Pods */,
+				2988B65F87952B225715937E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,8 +102,26 @@
 				4919A8CF28A7891800B531C2 /* SettingViewController.swift */,
 				49E36FFF28A78D1700E7EF07 /* SettingCell.swift */,
 				49E3700328A7B32500E7EF07 /* MainViewController.swift */,
+				49E3700528A8077200E7EF07 /* MapViewController.swift */,
 			);
 			path = Biom;
+			sourceTree = "<group>";
+		};
+		2988B65F87952B225715937E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B76E06B49B76B4F2599EB9D /* Pods_Biom.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		79E9AC4971EFC382DD754EC1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72029358D5E50FE134A0816B /* Pods-Biom.debug.xcconfig */,
+				592ABB5328143F73D9A066AB /* Pods-Biom.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03A5355228A7795C0007BCCF /* Build configuration list for PBXNativeTarget "Biom" */;
 			buildPhases = (
+				389A377088FCD95777256D8F /* [CP] Check Pods Manifest.lock */,
 				03A5353A28A7795B0007BCCF /* Sources */,
 				03A5353B28A7795B0007BCCF /* Frameworks */,
 				03A5353C28A7795B0007BCCF /* Resources */,
+				637D7D42E53082C0A2637ADD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,6 +199,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		389A377088FCD95777256D8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Biom-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		637D7D42E53082C0A2637ADD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Biom/Pods-Biom-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Biom/Pods-Biom-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Biom/Pods-Biom-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		03A5353A28A7795B0007BCCF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -181,6 +252,7 @@
 				49E3700428A7B32500E7EF07 /* MainViewController.swift in Sources */,
 				49E3700028A78D1700E7EF07 /* SettingCell.swift in Sources */,
 				4919A8D028A7891800B531C2 /* SettingViewController.swift in Sources */,
+				49E3700628A8077200E7EF07 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,14 +396,16 @@
 		};
 		03A5355328A7795C0007BCCF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72029358D5E50FE134A0816B /* Pods-Biom.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NMC6ZX3X68;
+				DEVELOPMENT_TEAM = RSF44CWACA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Biom/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 위치를 받아오려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -342,7 +416,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = oyejin.Biom;
+				PRODUCT_BUNDLE_IDENTIFIER = heewon.Biom1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -352,14 +426,16 @@
 		};
 		03A5355428A7795C0007BCCF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 592ABB5328143F73D9A066AB /* Pods-Biom.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NMC6ZX3X68;
+				DEVELOPMENT_TEAM = RSF44CWACA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Biom/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 위치를 받아오려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -370,7 +446,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = oyejin.Biom;
+				PRODUCT_BUNDLE_IDENTIFIER = heewon.Biom1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

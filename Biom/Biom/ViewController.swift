@@ -17,7 +17,9 @@ struct Result: Codable {
 
 // MARK: - Region
 struct Region: Codable {
+    let area1: Area
     let area2: Area
+    let area3: Area
 }
 
 // MARK: - Area
@@ -26,13 +28,20 @@ struct Area: Codable {
     
 }
 
+struct Google: Codable {
+    let data: DataClass
+}
 
-
-
+// MARK: - DataClass
+struct DataClass: Codable {
+    let accessToken: String
+}
 
 var latitude = 0.0
 var longitude = 0.0
-var place = ""
+var place = [String]()
+var token = ""
+var servertoken = ""
 
 class ViewController: UIViewController, CLLocationManagerDelegate{
 
@@ -51,6 +60,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         else {
             print("OFF")
         }
+        
         // MARK: - login 정보 남아있으면 자동 로그인
 //        if GIDSignIn.sharedInstance.currentUser != nil {
 //            DispatchQueue.main.async {
@@ -74,12 +84,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     // MARK: - Send authentication token to server
     func sendToken(_ token : String) {
-        let url = "http://biom-backend.ap-northeast-2.elasticbeanstalk.com/api/v1/login/naver"
-        let query = ["token": token]
+        let url = "http://biom-backend.ap-northeast-2.elasticbeanstalk.com/api/v1/login/google"
+        let query = ["accessToken": token]
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
         do {
             try request.httpBody = JSONSerialization.data(withJSONObject: query, options: [])
         } catch {
@@ -87,7 +96,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }
         AF.request(request).responseString { response in
             let value =  String(data: response.data!, encoding: .utf8)
-            print(value)
+            do {
+                let data = try JSONDecoder().decode(Google.self, from: response.value!.data(using: .utf8)!)
+                servertoken = data.data.accessToken
+                print(place)
+            } catch {
+                print(error)
+            }
         }
     }
     
@@ -99,20 +114,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             user.authentication.do { authentication, error in
                 guard error == nil else { return }
                 guard let authentication = authentication else { return }
-                let token = authentication.accessToken
-                print(token)
+                token = authentication.accessToken
                 completion(token)
             }
         }
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        print("updated")
         if let location = locations.first {
             latitude = location.coordinate.latitude
             longitude = location.coordinate.longitude
-//            print("위도 ", location.coordinate.latitude)
-//            print("경도 ", location.coordinate.longitude)
+            print("위도 ", location.coordinate.latitude)
+            print("경도 ", location.coordinate.longitude)
             getplace()
         }
     }
@@ -129,7 +142,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         AF.request(url, parameters: query, headers: ["X-NCP-APIGW-API-KEY-ID" : "ztps04ekoq", "X-NCP-APIGW-API-KEY" : "5vSlPaWyrhiTBAkFWyvuZ6pTg545122hkhmf1C65"]).responseString { response in
             do {
                 let data = try JSONDecoder().decode(Welcome.self, from: response.value!.data(using: .utf8)!)
-                place = data.results[0].region.area2.name
+                place.removeAll()
+                place.append(data.results[0].region.area1.name)
+                place.append(data.results[0].region.area2.name)
+                place.append(data.results[0].region.area3.name)
                 print(place)
             } catch {
                 print(error)
@@ -137,8 +153,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }
     }
    
-    func sendplace() {
-        
-    }
+    
 }
 

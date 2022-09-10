@@ -4,36 +4,6 @@ import SwiftJWT
 import Alamofire
 import CoreLocation
 
-
-// MARK: - Welcome
-struct Welcome: Codable {
-    let results: [Result]
-}
-
-// MARK: - Result
-struct Result: Codable {
-    let region: Region
-}
-
-// MARK: - Region
-struct Region: Codable {
-    let area2: Area
-}
-
-// MARK: - Area
-struct Area: Codable {
-    let name: String
-    
-}
-
-
-
-
-
-var latitude = 0.0
-var longitude = 0.0
-var place = ""
-
 class ViewController: UIViewController, CLLocationManagerDelegate{
 
     let config = GIDConfiguration(clientID: "278092451086-e1ks4nnvq6p7bl79bqfnt66rgposucge.apps.googleusercontent.com")
@@ -51,6 +21,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         else {
             print("OFF")
         }
+        
         // MARK: - login 정보 남아있으면 자동 로그인
 //        if GIDSignIn.sharedInstance.currentUser != nil {
 //            DispatchQueue.main.async {
@@ -64,22 +35,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
 
     @IBAction func google(_ sender: UIButton) {
         self.GoogleLogin() { token in
-            self.sendToken(token)
-            let newvc = self.storyboard?.instantiateViewController(withIdentifier: "Tabbar")
-            newvc?.modalPresentationStyle = .fullScreen
-            newvc?.modalTransitionStyle = .crossDissolve
-            self.present(newvc!, animated: true, completion: nil)
+            self.sendToken(token) { _ in
+                let newvc = self.storyboard?.instantiateViewController(withIdentifier: "Tabbar")
+                newvc?.modalPresentationStyle = .fullScreen
+                newvc?.modalTransitionStyle = .crossDissolve
+                self.present(newvc!, animated: true, completion: nil)
+            }
         }
     }
     
     // MARK: - Send authentication token to server
-    func sendToken(_ token : String) {
-        let url = "http://biom-backend.ap-northeast-2.elasticbeanstalk.com/api/v1/login/naver"
-        let query = ["token": token]
+    func sendToken(_ token : String, completion : @escaping (String) -> ()) {
+        let url = "http://biom-backend.ap-northeast-2.elasticbeanstalk.com/api/v1/login/google"
+        let query = ["accessToken": token]
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
         do {
             try request.httpBody = JSONSerialization.data(withJSONObject: query, options: [])
         } catch {
@@ -87,7 +58,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }
         AF.request(request).responseString { response in
             let value =  String(data: response.data!, encoding: .utf8)
-            print(value)
+            do {
+                let data = try JSONDecoder().decode(Google.self, from: response.value!.data(using: .utf8)!)
+                servertoken = data.data.accessToken
+                print("servertoken finish")
+                completion(servertoken)
+                //print(place)
+            } catch {
+                print(error)
+            }
         }
     }
     
@@ -99,15 +78,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             user.authentication.do { authentication, error in
                 guard error == nil else { return }
                 guard let authentication = authentication else { return }
-                let token = authentication.accessToken
-                print(token)
+                token = authentication.accessToken
                 completion(token)
             }
         }
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        print("updated")
         if let location = locations.first {
             latitude = location.coordinate.latitude
             longitude = location.coordinate.longitude
@@ -128,17 +105,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         components.queryItems = query.map { URLQueryItem(name: $0, value: $1) }
         AF.request(url, parameters: query, headers: ["X-NCP-APIGW-API-KEY-ID" : "ztps04ekoq", "X-NCP-APIGW-API-KEY" : "5vSlPaWyrhiTBAkFWyvuZ6pTg545122hkhmf1C65"]).responseString { response in
             do {
-                let data = try JSONDecoder().decode(Welcome.self, from: response.value!.data(using: .utf8)!)
-                place = data.results[0].region.area2.name
-                print(place)
+                let data = try JSONDecoder().decode(start.self, from: response.value!.data(using: .utf8)!)
+                place.removeAll()
+                place.append(data.results[0].region.area1.name)
+                place.append(data.results[0].region.area2.name)
+                place.append(data.results[0].region.area3.name)
+                //print(place)
             } catch {
                 print(error)
             }
         }
     }
    
-    func sendplace() {
-        
-    }
+    
 }
 

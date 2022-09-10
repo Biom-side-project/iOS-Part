@@ -405,6 +405,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="main.png" id="Dnj-XK-Kti"/>
                     <connections>
+                        <outlet property="biompercent" destination="XPi-1z-8td" id="gsD-r8-d6T"/>
                         <outlet property="buttonView" destination="1HN-Zz-Hbb" id="lI4-6J-SoM"/>
                         <outlet property="percentView" destination="CAB-ZV-7pH" id="vCG-dM-j5c"/>
                         <outlet property="region" destination="o7K-Hg-xno" id="puY-pr-SaH"/>

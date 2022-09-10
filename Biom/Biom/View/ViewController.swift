@@ -4,45 +4,6 @@ import SwiftJWT
 import Alamofire
 import CoreLocation
 
-
-// MARK: - Welcome
-struct Welcome: Codable {
-    let results: [Result]
-}
-
-// MARK: - Result
-struct Result: Codable {
-    let region: Region
-}
-
-// MARK: - Region
-struct Region: Codable {
-    let area1: Area
-    let area2: Area
-    let area3: Area
-}
-
-// MARK: - Area
-struct Area: Codable {
-    let name: String
-    
-}
-
-struct Google: Codable {
-    let data: DataClass
-}
-
-// MARK: - DataClass
-struct DataClass: Codable {
-    let accessToken: String
-}
-
-var latitude = 0.0
-var longitude = 0.0
-var place = [String]()
-var token = ""
-var servertoken = ""
-
 class ViewController: UIViewController, CLLocationManagerDelegate{
 
     let config = GIDConfiguration(clientID: "278092451086-e1ks4nnvq6p7bl79bqfnt66rgposucge.apps.googleusercontent.com")
@@ -74,16 +35,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
 
     @IBAction func google(_ sender: UIButton) {
         self.GoogleLogin() { token in
-            self.sendToken(token)
-            let newvc = self.storyboard?.instantiateViewController(withIdentifier: "Tabbar")
-            newvc?.modalPresentationStyle = .fullScreen
-            newvc?.modalTransitionStyle = .crossDissolve
-            self.present(newvc!, animated: true, completion: nil)
+            self.sendToken(token) { _ in
+                let newvc = self.storyboard?.instantiateViewController(withIdentifier: "Tabbar")
+                newvc?.modalPresentationStyle = .fullScreen
+                newvc?.modalTransitionStyle = .crossDissolve
+                self.present(newvc!, animated: true, completion: nil)
+            }
         }
     }
     
     // MARK: - Send authentication token to server
-    func sendToken(_ token : String) {
+    func sendToken(_ token : String, completion : @escaping (String) -> ()) {
         let url = "http://biom-backend.ap-northeast-2.elasticbeanstalk.com/api/v1/login/google"
         let query = ["accessToken": token]
         var request = URLRequest(url: URL(string: url)!)
@@ -99,7 +61,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             do {
                 let data = try JSONDecoder().decode(Google.self, from: response.value!.data(using: .utf8)!)
                 servertoken = data.data.accessToken
-                print(place)
+                print("servertoken finish")
+                completion(servertoken)
+                //print(place)
             } catch {
                 print(error)
             }
@@ -124,8 +88,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         if let location = locations.first {
             latitude = location.coordinate.latitude
             longitude = location.coordinate.longitude
-            print("위도 ", location.coordinate.latitude)
-            print("경도 ", location.coordinate.longitude)
+//            print("위도 ", location.coordinate.latitude)
+//            print("경도 ", location.coordinate.longitude)
             getplace()
         }
     }
@@ -141,12 +105,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         components.queryItems = query.map { URLQueryItem(name: $0, value: $1) }
         AF.request(url, parameters: query, headers: ["X-NCP-APIGW-API-KEY-ID" : "ztps04ekoq", "X-NCP-APIGW-API-KEY" : "5vSlPaWyrhiTBAkFWyvuZ6pTg545122hkhmf1C65"]).responseString { response in
             do {
-                let data = try JSONDecoder().decode(Welcome.self, from: response.value!.data(using: .utf8)!)
+                let data = try JSONDecoder().decode(start.self, from: response.value!.data(using: .utf8)!)
                 place.removeAll()
                 place.append(data.results[0].region.area1.name)
                 place.append(data.results[0].region.area2.name)
                 place.append(data.results[0].region.area3.name)
-                print(place)
+                //print(place)
             } catch {
                 print(error)
             }
